@@ -6,7 +6,7 @@ services:
     name: calorie-tracker-backend
     runtime: docker
     region: singapore          # keep both services in the same region
-    plan: starter              # JVM needs more than the free 512 MB
+    plan: free              # JVM needs more than the free 512 MB
     dockerContext: ./backend
     dockerfilePath: ./backend/Dockerfile
     healthCheckPath: /swagger-ui.html   # switch to /actuator/health if you add Actuator
@@ -31,7 +31,7 @@ services:
     name: calorie-tracker-frontend
     runtime: docker
     region: singapore
-    plan: starter
+    plan: free
     dockerContext: ./frontend
     dockerfilePath: ./frontend/Dockerfile
     healthCheckPath: /
