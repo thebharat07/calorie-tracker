@@ -1,0 +1,18 @@
+{
+  "name": "calorie-tracker-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint",
+    "backend:dev": "gradle -p backend bootRun",
+    "backend:build": "gradle -p backend build",
+    "backend:test": "gradle -p backend test",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  }
+}

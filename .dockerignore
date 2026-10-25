@@ -1,0 +1,12 @@
+**/.git
+**/.gitignore
+**/.vscode
+**/.idea
+**/node_modules
+**/build
+**/.next
+**/.gradle
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
