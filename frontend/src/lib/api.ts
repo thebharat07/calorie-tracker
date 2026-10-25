@@ -20,7 +20,7 @@ class ApiError extends Error {
 }
 
 // Configurable backend REST API URL (defaults to relative /api proxied via Next.js rewrites or reverse proxy)
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
+const API_BASE_URL = process.env.BACKEND_INTERNAL_URL || 'http://localhost:8080';
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
