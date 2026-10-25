@@ -44,7 +44,7 @@ services:
         value: 0.0.0.0
       # Render private network, replaces http://backend:8080 from compose
       - key: BACKEND_INTERNAL_URL
-        value: http://calorie-tracker-backend:8080
+        value: https://calorie-tracker-backend-9wcy.onrender.com
       # Build-time variable. Leave empty like your compose default,
       # or set it to the backend's public https URL if the browser calls it directly.
       - key: NEXT_PUBLIC_API_URL
