@@ -32,7 +32,7 @@ ENV NODE_ENV=production
 
 # Optional build-time argument to override API base URL if needed
 ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$BACKEND_INTERNAL_URL
 
 RUN npm run build
 
