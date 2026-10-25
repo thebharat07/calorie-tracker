@@ -1,0 +1,51 @@
+services:
+  # ---------------------------------------------------------------
+  # Spring Boot backend (compose service: backend)
+  # ---------------------------------------------------------------
+  - type: web
+    name: calorie-tracker-backend
+    runtime: docker
+    region: singapore          # keep both services in the same region
+    plan: starter              # JVM needs more than the free 512 MB
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /swagger-ui.html   # switch to /actuator/health if you add Actuator
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: DB_URL
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+
+  # ---------------------------------------------------------------
+  # Next.js frontend (compose service: frontend)
+  # ---------------------------------------------------------------
+  - type: web
+    name: calorie-tracker-frontend
+    runtime: docker
+    region: singapore
+    plan: starter
+    dockerContext: ./frontend
+    dockerfilePath: ./frontend/Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: HOSTNAME
+        value: 0.0.0.0
+      # Render private network, replaces http://backend:8080 from compose
+      - key: BACKEND_INTERNAL_URL
+        value: http://calorie-tracker-backend:8080
+      # Build-time variable. Leave empty like your compose default,
+      # or set it to the backend's public https URL if the browser calls it directly.
+      - key: NEXT_PUBLIC_API_URL
+        value: ""
