@@ -30,9 +30,11 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Optional build-time argument to override API base URL if needed
+# Optional build-time argument to override API URLs if needed
 ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$BACKEND_INTERNAL_URL
+ARG BACKEND_INTERNAL_URL
+ENV NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+ENV BACKEND_INTERNAL_URL=${BACKEND_INTERNAL_URL}
 
 RUN npm run build
 
