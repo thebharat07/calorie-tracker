@@ -7,16 +7,17 @@ A full-stack, production-ready health and nutrition tracking application featuri
 ## 📑 Table of Contents
 
 1. [Features](#-features)
-2. [Architecture & Tech Stack](#-architecture--tech-stack)
-3. [Assumptions Made](#-assumptions-made)
-4. [Prerequisites](#-prerequisites)
-5. [Environment Configuration](#-environment-configuration)
-6. [Option 1: Quickstart with Docker Compose (Recommended)](#-option-1-quickstart-with-docker-compose-recommended)
-7. [Option 2: Local Development Setup (Without Docker)](#-option-2-local-development-setup-without-docker)
-8. [Option 3: Cloud Deployment (Render / VPS)](#-option-3-cloud-deployment-render--vps)
-9. [API Endpoints & Swagger Documentation](#-api-endpoints--swagger-documentation)
-10. [Testing & Code Quality](#-testing--code-quality)
-11. [Project Structure](#-project-structure)
+2. [Demo Video & Walkthrough](#-demo-video--walkthrough)
+3. [Architecture & Tech Stack](#-architecture--tech-stack)
+4. [Assumptions Made](#-assumptions-made)
+5. [Prerequisites](#-prerequisites)
+6. [Environment Configuration](#-environment-configuration)
+7. [Option 1: Quickstart with Docker Compose (Recommended)](#-option-1-quickstart-with-docker-compose-recommended)
+8. [Option 2: Local Development Setup (Without Docker)](#-option-2-local-development-setup-without-docker)
+9. [Option 3: Cloud Deployment (Render / VPS)](#-option-3-cloud-deployment-render--vps)
+10. [API Endpoints & Swagger Documentation](#-api-endpoints--swagger-documentation)
+11. [Testing & Code Quality](#-testing--code-quality)
+12. [Project Structure](#-project-structure)
 
 ---
 
@@ -31,6 +32,14 @@ A full-stack, production-ready health and nutrition tracking application featuri
   - Micronutrient tracking (Dietary Fiber, Sugar, Sodium, Calcium, Iron, Potassium, Vitamins A, C, D) against standard Recommended Daily Allowances (RDA).
 - **Log History & Filtering**: Filter meal logs by date ranges, search by meal type, and navigate pages with server-side pagination.
 - **Clean Architecture & Containerization**: Fully dockerized with multi-stage builds, non-root users, health checks, and optional single-port Nginx ingress.
+
+---
+
+## 🎬 Demo Video & Walkthrough
+
+Watch the application in action — covering the interactive dashboard, nutrition goal tracking, meal logging, and automated photo nutrition extraction powered by Google Gemini Vision:
+
+[▶ Download / watch the demo video](https://github.com/thebharat07/calorie-tracker/releases/download/Demo/Demo.mp4)
 
 ---
 
